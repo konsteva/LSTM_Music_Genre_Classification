@@ -5,7 +5,7 @@ import keras.regularizers
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from matplotlib import pyplot as plt
 
-JSON_PATH = "Valerio_data.json"
+JSON_PATH = "extracted_data.json"
 
 
 def load_data(json_path):
