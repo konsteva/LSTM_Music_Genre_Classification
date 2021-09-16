@@ -25,7 +25,9 @@ Due to the small amount of data contained in the dataset, data augmentation is p
   
   A Recurrent Neural Network (RNN) was built using Keras. Since the data can be perceived as a time-series using a Long Short Term Memory architecture seemed intuitive. The Network has depth of 3 (hidden) layers of decreasing width and an output layer of 10 nodes that correspond to each music genre. To minimize overfitting L1, L2 regularization and Dropout were tried but Dropout had the best results so it's the one used in the finalized network. The number of epochs set for the network training was 150 and the batch size was set to 20. The layers used the ReLU activation function, the model optimizer was Adam and for the loss Cross Entropy function was used. After training the network the model was fit over the data and also saved as an h5 file for later use.
   
-  # Results and Visualization
+  # Results and Visualization and Comments
+  
+  After the 150 epochs the final results are:
   
       Epoch 150/150
       300/300 [==============================] - 20s 66ms/step - loss: 0.0520 - accuracy: 0.9882 - val_loss: 1.3496 - val_accuracy: 0.8214
@@ -33,6 +35,15 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 
       Test accuracy: 0.8224999904632568
       
+  The final accuracy of the model is 82%. Below, the accuracy and loss graphs can be seen:
+      
 ![accuracy](https://user-images.githubusercontent.com/58198596/133620949-5c534090-b2df-4304-beab-609c9bf8f545.png)
 
 ![error](https://user-images.githubusercontent.com/58198596/133620939-b98f9feb-14d7-41a5-ba71-81bcd8701704.png)
+
+Looking at the accuracy graph it is clear that after about epoch 15 the model starts overfitting and by the end of 150 epochs it is heavily overfitting. It is also interresting that in the first epochs the validation accuracy is greater than the train accuracy. This is probably caused because the training set has less information availliable due to the Dropout rate and as a result it makes the prediction for the train set harder than the prediction of the validation set in the first few epochs. 
+
+Looking at the loss graph we notice that the loss is steep decreasing until about epoch 15 and it starts slowly and steadily increasing at around epoch 20 until the end. This contradiction with the high accuracy implies once again that the model starts overfitting at about epoch 15. This increase in the loss might also be due to the selected Cross Entropy loss function as it penalizes wrong predictions more than it rewards correct. Thus wrong predictions would cause a small decrease in accuracy but a big increase in the loss. Another interesting thing we can observe if we compare the validation and the train loss, is that the validation loss is less stable locally, meaning that even though the trend is obvious and relatively stable, there are greater differences in the loss value between successive epochs compared to the difference in loss value in the training set. This is probably caused due to the small batch size number. We can expect to observe smaller differences if we increase the batch size.
+
+# Comparison with other models
+
