@@ -47,3 +47,9 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 
 # Comparison with other models
 
+# Possible ways of improving the model
+- Adding more features other than MFCCs, eg. tempo, speechiness, loudness etc.
+- Performing early stopping to deal with overfitting
+- Using a different optimizer and loss function
+- Performing more data augmentation
+- Using computer vision to train the model based on the spectogram and/or MFCCs (?)
