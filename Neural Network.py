@@ -65,7 +65,7 @@ def build_model(input_shape):
 
 def test_model(model, X_train, y_train, X_test, y_test, X_val, y_val):
 
-    history = model.fit(X_train, y_train, epochs=50, batch_size=20, validation_data=(X_val, y_val), shuffle=False)
+    history = model.fit(X_train, y_train, epochs=150, batch_size=20, validation_data=(X_val, y_val), shuffle=False)
     test_loss, test_acc = model.evaluate(X_test, y_test, verbose=2)
     print('\nTest accuracy:', test_acc)
 
