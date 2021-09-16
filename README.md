@@ -25,7 +25,7 @@ Due to the small amount of data contained in the dataset, data augmentation is p
   
   A Recurrent Neural Network (RNN) was built using Keras. Since the data can be perceived as a time-series using a Long Short Term Memory architecture seemed intuitive. The Network has depth of 3 (hidden) layers of decreasing width and an output layer of 10 nodes that correspond to each music genre. To minimize overfitting L1, L2 regularization and Dropout were tried but Dropout had the best results so it's the one used in the finalized network. The number of epochs set for the network training was 150 and the batch size was set to 20. The layers used the ReLU activation function, the model optimizer was Adam and for the loss Cross Entropy function was used. After training the network the model was fit over the data and also saved as an h5 file for later use.
   
-  # Results and Visualization and Comments
+  # Results, Visualization and Comments
   
   After the 150 epochs the final results are:
   
