@@ -101,7 +101,7 @@ Results:
 ![cnn acc](https://user-images.githubusercontent.com/58198596/133783726-73cc1ef1-628a-4d4c-88dd-0c45c0d4d987.png) ![cnn err](https://user-images.githubusercontent.com/58198596/133783719-ec68ddc8-1023-4557-b4b9-04db975e5c23.png)
 
 
-- Recurent Neural Network (RNN) - LSTM
+- Recurrent Neural Network (RNN) - LSTM
 
 Model:
 
