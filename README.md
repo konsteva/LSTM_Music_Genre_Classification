@@ -50,11 +50,13 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 
 Model:
 
-      keras.layers.Flatten(input_shape=input_shape),
-      keras.layers.Dense(512, activation='relu'),
-      keras.layers.Dense(256, activation='relu'),
-      keras.layers.Dense(64, activation='relu'),
-      keras.layers.Dense(10, activation='softmax')
+      model = keras.Sequential([
+        keras.layers.Flatten(input_shape=input_shape),
+        keras.layers.Dense(512, activation='relu'),
+        keras.layers.Dense(256, activation='relu'),
+        keras.layers.Dense(64, activation='relu'),
+        keras.layers.Dense(10, activation='softmax')
+    ])
 
 
 Results:
@@ -64,8 +66,9 @@ Results:
       63/63 - 0s - loss: 4.4274 - accuracy: 0.6005
 
       Test accuracy: 0.6004999876022339
-      
- ![MLP acc](https://user-images.githubusercontent.com/58198596/133778798-52552811-51e2-4f66-b511-f122e989e3ea.png) ![MLP err](https://user-images.githubusercontent.com/58198596/133778793-c12551d0-33ec-4a09-9ab4-222f2b282744.png)
+   
+  
+![mlp acc](https://user-images.githubusercontent.com/58198596/133784877-a35d667c-e31a-46ad-beaa-b1035bc30615.png) ![mlp err](https://user-images.githubusercontent.com/58198596/133784871-71b5a958-deb8-417e-ab0b-47524b371d3c.png)
 
 
 - Convolutional Neural Network (CNN):
@@ -97,9 +100,7 @@ Results:
       Test accuracy: 0.734000027179718
       
 
- ![CNN acc](https://user-images.githubusercontent.com/58198596/133778876-a48225e7-ef6c-4e36-812c-fa0e750a3fd9.png) ![CNN err](https://user-images.githubusercontent.com/58198596/133778872-0182e0cc-2f32-4fd0-a772-d536d6702e6a.png)
-
-
+![cnn acc](https://user-images.githubusercontent.com/58198596/133783726-73cc1ef1-628a-4d4c-88dd-0c45c0d4d987.png) ![cnn err](https://user-images.githubusercontent.com/58198596/133783719-ec68ddc8-1023-4557-b4b9-04db975e5c23.png)
 
 
 - Recurent Neural Network (RNN) - LSTM
@@ -118,7 +119,15 @@ Model:
       
       
 Results:
-      
+
+	Epoch 150/150
+	300/300 [==============================] - 9s 30ms/step - loss: 0.3915 - accuracy: 0.8803 - val_loss: 1.0546 - val_accuracy: 0.7449
+	63/63 - 1s - loss: 1.0176 - accuracy: 0.7675
+
+	Test accuracy: 0.7674999833106995
+  
+  
+![lstm2 err](https://user-images.githubusercontent.com/58198596/133780555-6722ec26-10c1-4c4f-852b-0386e0aefb6f.png) ![lstm2 acc](https://user-images.githubusercontent.com/58198596/133780564-597fbf35-cec4-41e2-85d5-7990aa34b703.png)
 
 
 # Possible ways of improving the model
