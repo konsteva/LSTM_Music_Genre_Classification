@@ -98,8 +98,8 @@ Results:
       Test accuracy: 0.734000027179718
       
 
-![CNN acc](https://user-images.githubusercontent.com/58198596/133778876-a48225e7-ef6c-4e36-812c-fa0e750a3fd9.png)      
-![CNN err](https://user-images.githubusercontent.com/58198596/133778872-0182e0cc-2f32-4fd0-a772-d536d6702e6a.png)
+ ![CNN acc](https://user-images.githubusercontent.com/58198596/133778876-a48225e7-ef6c-4e36-812c-fa0e750a3fd9.png)      
+ ![CNN err](https://user-images.githubusercontent.com/58198596/133778872-0182e0cc-2f32-4fd0-a772-d536d6702e6a.png)
 
 
 
