@@ -46,6 +46,70 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 - Looking at the loss graph we notice that the loss is steep decreasing until about epoch 15 and it starts slowly and steadily increasing at around epoch 20 until the end. This contradiction with the high accuracy implies once again that the model starts overfitting at about epoch 15. This increase in the loss might also be due to the selected Cross Entropy loss function as it penalizes wrong predictions more than it rewards correct. Thus wrong predictions would cause a small decrease in accuracy but a big increase in the loss. Another interesting thing we can observe if we compare the validation and the train loss, is that the validation loss is less stable locally, meaning that even though the trend is obvious and relatively stable, there are greater differences in the loss value between successive epochs compared to the difference in loss value in the training set. This is probably caused due to the small batch size number. We can expect to observe smaller differences if we increase the batch size.
 
 # Comparison with other models
+- Multilayer Perceptron (MLP):
+
+      keras.layers.Flatten(input_shape=input_shape),
+      keras.layers.Dense(512, activation='relu'),
+      keras.layers.Dense(256, activation='relu'),
+      keras.layers.Dense(64, activation='relu'),
+      keras.layers.Dense(10, activation='softmax')
+
+
+      Epoch 150/150
+      300/300 [==============================] - 1s 4ms/step - loss: 0.2354 - accuracy: 0.9421 - val_loss: 4.8255 - val_accuracy: 0.6013
+      63/63 - 0s - loss: 4.4274 - accuracy: 0.6005
+
+      Test accuracy: 0.6004999876022339
+      
+ ![MLP acc](https://user-images.githubusercontent.com/58198596/133778798-52552811-51e2-4f66-b511-f122e989e3ea.png)
+ ![MLP err](https://user-images.githubusercontent.com/58198596/133778793-c12551d0-33ec-4a09-9ab4-222f2b282744.png)
+
+
+- Convolutional Neural Network (CNN):
+
+      model = keras.Sequential()
+	    model.add(keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=input_shape))
+	    model.add(keras.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same'))
+	    model.add(keras.layers.BatchNormalization())
+	    model.add(keras.layers.Conv2D(32, (3, 3), activation='relu'))
+	    model.add(keras.layers.MaxPooling2D((3, 3), strides=(2, 2), padding='same'))
+	    model.add(keras.layers.BatchNormalization())
+	    model.add(keras.layers.Conv2D(32, (2, 2), activation='relu'))
+	    model.add(keras.layers.MaxPooling2D((2, 2), strides=(2, 2), padding='same'))
+	    model.add(keras.layers.BatchNormalization())
+	    model.add(keras.layers.Flatten())
+	    model.add(keras.layers.Dense(64, activation='relu'))
+	    model.add(keras.layers.Dropout(0.3))
+	    model.add(keras.layers.Dense(10, activation='softmax'))
+
+
+      Epoch 150/150
+      300/300 [==============================] - 2s 7ms/step - loss: 0.0504 - accuracy: 0.9830 - val_loss: 2.0805 - val_accuracy: 0.7354
+      63/63 - 0s - loss: 2.0810 - accuracy: 0.7340
+
+      Test accuracy: 0.734000027179718
+      
+
+![CNN acc](https://user-images.githubusercontent.com/58198596/133778876-a48225e7-ef6c-4e36-812c-fa0e750a3fd9.png)      
+![CNN err](https://user-images.githubusercontent.com/58198596/133778872-0182e0cc-2f32-4fd0-a772-d536d6702e6a.png)
+
+
+
+
+- Recurent Neural Network (RNN) - LSTM
+      model = keras.Sequential()
+      model.add(LSTM(128,input_shape=input_shape))
+      model.add(Dropout(0.2))
+      model.add(Dense(128, activation='relu'))
+      model.add(Dense(64, activation='relu'))
+      model.add(Dropout(0.4))
+      model.add(Dense(48, activation='relu'))
+      model.add(Dropout(0.4))
+      model.add(Dense(24, activation='softmax'))
+      
+
+      
+
 
 # Possible ways of improving the model
 - Adding more features other than MFCCs, eg. tempo, speechiness, loudness etc.
