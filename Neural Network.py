@@ -34,24 +34,20 @@ def split_data(data):
 def build_model(input_shape):
 
     model = keras.Sequential()
-
     # Input Layer
-    model.add(LSTM(128, input_shape=input_shape, return_sequences=True))
-
-    # 1st hidden layer
-    model.add(LSTM(128))
+    model.add(LSTM(128,input_shape=input_shape))
     model.add(Dropout(0.2))
-
-    # 2nd hidden layer
+    # 1st Hidden Layer
+    model.add(Dense(128, activation='relu'))
+    # 2nd Hidden Layer
     model.add(Dense(64, activation='relu'))
-    model.add(Dropout(0.3))
+    model.add(Dropout(0.4))
+    # 3rd Hidden Layer
+    model.add(Dense(48, activation='relu'))
+    model.add(Dropout(0.4))
+    # Output Layer
+    model.add(Dense(24, activation='softmax'))
 
-    # 3rd hidden layer
-    model.add(Dense(32, activation='relu'))
-    model.add(Dropout(0.3))
-
-    # Output layer
-    model.add(Dense(10, activation='softmax'))
     model.summary()
 
     model.compile(optimizer='adam', loss='SparseCategoricalCrossentropy', metrics=['accuracy'])
