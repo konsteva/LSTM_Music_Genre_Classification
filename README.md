@@ -29,21 +29,23 @@ Due to the small amount of data contained in the dataset, data augmentation is p
   
   After the 150 epochs the final results are:
   
-      Epoch 150/150
-      300/300 [==============================] - 20s 66ms/step - loss: 0.0520 - accuracy: 0.9882 - val_loss: 1.3496 - val_accuracy: 0.8214
-      63/63 - 1s - loss: 1.2672 - accuracy: 0.8225
+      	Epoch 150/150
+	300/300 [==============================] - 9s 30ms/step - loss: 0.3915 - accuracy: 0.8803 - val_loss: 1.0546 - val_accuracy: 0.7449
+	63/63 - 1s - loss: 1.0176 - accuracy: 0.7675
 
-      Test accuracy: 0.8224999904632568
-      
-  The final accuracy of the model is 82%. Below, the accuracy and loss graphs can be seen:
-      
-![accuracy](https://user-images.githubusercontent.com/58198596/133620949-5c534090-b2df-4304-beab-609c9bf8f545.png)
+	Test accuracy: 0.7674999833106995
 
-![error](https://user-images.githubusercontent.com/58198596/133620939-b98f9feb-14d7-41a5-ba71-81bcd8701704.png)
 
-- Looking at the accuracy graph it is clear that after about epoch 15 the model starts overfitting and by the end of 150 epochs it is heavily overfitting. It is also interresting that in the first epochs the validation accuracy is greater than the train accuracy. This is probably caused because the training set has less information availliable due to the Dropout rate and as a result it makes the prediction for the train set harder than the prediction of the validation set in the first few epochs. 
+The final accuracy of the model is 76%. Below, the accuracy and loss graphs can be seen:
+  
+![lstm2 err](https://user-images.githubusercontent.com/58198596/133780555-6722ec26-10c1-4c4f-852b-0386e0aefb6f.png) ![lstm2 acc](https://user-images.githubusercontent.com/58198596/133780564-597fbf35-cec4-41e2-85d5-7990aa34b703.png)
 
-- Looking at the loss graph we notice that the loss is steep decreasing until about epoch 15 and it starts slowly and steadily increasing at around epoch 20 until the end. This contradiction with the high accuracy implies once again that the model starts overfitting at about epoch 15. This increase in the loss might also be due to the selected Cross Entropy loss function as it penalizes wrong predictions more than it rewards correct. Thus wrong predictions would cause a small decrease in accuracy but a big increase in the loss. Another interesting thing we can observe if we compare the validation and the train loss, is that the validation loss is less stable locally, meaning that even though the trend is obvious and relatively stable, there are greater differences in the loss value between successive epochs compared to the difference in loss value in the training set. This is probably caused due to the small batch size number. We can expect to observe smaller differences if we increase the batch size.
+            
+
+- Looking at the accuracy graph it is clear that after about epoch 20 the model starts overfitting and by the end of 150 epochs it is significantly overfitting. It is also interresting that in the first epochs the validation accuracy is greater than the train accuracy. This is probably caused because the training set has less information availliable due to the Dropout rate and as a result it makes the prediction for the train set harder than the prediction of the validation set in the first few epochs. 
+
+- Looking at the loss graph we notice that the loss is steep decreasing until about epoch 20 where it stops and is relatively the same until the end (with very minor increase). This implies once again that the model starts overfitting at about epoch 20. This increase in the loss might also be due to the selected Cross Entropy loss function as it penalizes wrong predictions more than it rewards correct. Thus wrong predictions would cause a small decrease in accuracy but a big increase in the loss.
+
 
 # Comparison with other models
 - Multilayer Perceptron (MLP):
@@ -107,27 +109,29 @@ Results:
 
 Model:
 
-      model = keras.Sequential()
-      model.add(LSTM(128,input_shape=input_shape))
-      model.add(Dropout(0.2))
-      model.add(Dense(128, activation='relu'))
-      model.add(Dense(64, activation='relu'))
-      model.add(Dropout(0.4))
-      model.add(Dense(48, activation='relu'))
-      model.add(Dropout(0.4))
-      model.add(Dense(24, activation='softmax'))
+	model = keras.Sequential()
+
+    	model.add(LSTM(128, input_shape=input_shape, return_sequences=True))
+	model.add(LSTM(128))
+    	model.add(Dropout(0.2))
+	model.add(Dense(64, activation='relu'))
+    	model.add(Dropout(0.3))
+	model.add(Dense(32, activation='relu'))
+    	model.add(Dropout(0.3))
+	model.add(Dense(10, activation='softmax'))
       
       
 Results:
 
 	Epoch 150/150
-	300/300 [==============================] - 9s 30ms/step - loss: 0.3915 - accuracy: 0.8803 - val_loss: 1.0546 - val_accuracy: 0.7449
-	63/63 - 1s - loss: 1.0176 - accuracy: 0.7675
+      	300/300 [==============================] - 20s 66ms/step - loss: 0.0520 - accuracy: 0.9882 - val_loss: 1.3496 - val_accuracy: 0.8214
+      	63/63 - 1s - loss: 1.2672 - accuracy: 0.8225
 
-	Test accuracy: 0.7674999833106995
+      	Test accuracy: 0.8224999904632568
   
   
-![lstm2 err](https://user-images.githubusercontent.com/58198596/133780555-6722ec26-10c1-4c4f-852b-0386e0aefb6f.png) ![lstm2 acc](https://user-images.githubusercontent.com/58198596/133780564-597fbf35-cec4-41e2-85d5-7990aa34b703.png)
+![accuracy](https://user-images.githubusercontent.com/58198596/133620949-5c534090-b2df-4304-beab-609c9bf8f545.png) ![error](https://user-images.githubusercontent.com/58198596/133620939-b98f9feb-14d7-41a5-ba71-81bcd8701704.png)
+
 
 
 # Possible ways of improving the model
