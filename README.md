@@ -1,7 +1,3 @@
-# Google Colab link:
-Neural Network link:
-https://colab.research.google.com/drive/11VI_GEIIs2ScDfJcvj5xh2yjAbm92N2P#scrollTo=0vBl9dcWc97E
-
 # LSTM_Music_Genre_Classification
 A Deep Learning algorithm for music genre classification. The network was trained on the GTZAN dataset. The dataset consists of 1000 audio tracks each 30 seconds long. It contains 10 genres, each represented by 100 tracks. The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 
