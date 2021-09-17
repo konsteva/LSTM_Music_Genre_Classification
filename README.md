@@ -27,9 +27,9 @@ Due to the small amount of data contained in the dataset, data augmentation is p
   
   # Results, Visualization and Comments
   
-  After the 150 epochs the final results are:
+After the 150 epochs the final results are:
   
-      	Epoch 150/150
+	Epoch 150/150
 	300/300 [==============================] - 9s 30ms/step - loss: 0.3915 - accuracy: 0.8803 - val_loss: 1.0546 - val_accuracy: 0.7449
 	63/63 - 1s - loss: 1.0176 - accuracy: 0.7675
 
