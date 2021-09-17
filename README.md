@@ -11,9 +11,7 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 
 - Visualization of spectogram and MFCCs
 
-  ![spectogram](https://user-images.githubusercontent.com/58198596/133607202-d45efc3b-2e06-48c9-b7a4-0d10bc2c28cc.png)
-  
-  ![mfcc](https://user-images.githubusercontent.com/58198596/133607199-afca9a28-54d6-48b4-ae05-311a908bd9a0.png)
+  ![spectogram](https://user-images.githubusercontent.com/58198596/133607202-d45efc3b-2e06-48c9-b7a4-0d10bc2c28cc.png) ![mfcc](https://user-images.githubusercontent.com/58198596/133607199-afca9a28-54d6-48b4-ae05-311a908bd9a0.png)
   
 # Neural Network
   
