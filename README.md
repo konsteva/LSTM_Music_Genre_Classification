@@ -36,7 +36,7 @@ After 150 epochs the final results are:
 	Test accuracy: 0.7674999833106995
 
 
-The final accuracy of the model is 76%. Below, the accuracy and loss graphs can be seen:
+The final accuracy of the model is ~77%. Below, the accuracy and loss graphs can be seen:
   
 ![lstm2 err](https://user-images.githubusercontent.com/58198596/133780555-6722ec26-10c1-4c4f-852b-0386e0aefb6f.png) ![lstm2 acc](https://user-images.githubusercontent.com/58198596/133780564-597fbf35-cec4-41e2-85d5-7990aa34b703.png)
 
