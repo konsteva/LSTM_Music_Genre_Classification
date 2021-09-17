@@ -48,12 +48,16 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 # Comparison with other models
 - Multilayer Perceptron (MLP):
 
+Model:
+
       keras.layers.Flatten(input_shape=input_shape),
       keras.layers.Dense(512, activation='relu'),
       keras.layers.Dense(256, activation='relu'),
       keras.layers.Dense(64, activation='relu'),
       keras.layers.Dense(10, activation='softmax')
 
+
+Results:
 
       Epoch 150/150
       300/300 [==============================] - 1s 4ms/step - loss: 0.2354 - accuracy: 0.9421 - val_loss: 4.8255 - val_accuracy: 0.6013
@@ -66,6 +70,8 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 
 
 - Convolutional Neural Network (CNN):
+
+Model:
 
       model = keras.Sequential()
 	    model.add(keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=input_shape))
@@ -83,6 +89,8 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 	    model.add(keras.layers.Dense(10, activation='softmax'))
 
 
+Results:
+
       Epoch 150/150
       300/300 [==============================] - 2s 7ms/step - loss: 0.0504 - accuracy: 0.9830 - val_loss: 2.0805 - val_accuracy: 0.7354
       63/63 - 0s - loss: 2.0810 - accuracy: 0.7340
@@ -97,6 +105,9 @@ Due to the small amount of data contained in the dataset, data augmentation is p
 
 
 - Recurent Neural Network (RNN) - LSTM
+
+Model:
+
       model = keras.Sequential()
       model.add(LSTM(128,input_shape=input_shape))
       model.add(Dropout(0.2))
@@ -107,7 +118,8 @@ Due to the small amount of data contained in the dataset, data augmentation is p
       model.add(Dropout(0.4))
       model.add(Dense(24, activation='softmax'))
       
-
+      
+Results:
       
 
 
