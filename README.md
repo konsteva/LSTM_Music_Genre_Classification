@@ -103,15 +103,15 @@ Results:
 
 Model:
 
-	model = keras.Sequential()
-    	model.add(LSTM(128, input_shape=input_shape, return_sequences=True))
-	model.add(LSTM(128))
-    	model.add(Dropout(0.2))
-	model.add(Dense(64, activation='relu'))
-    	model.add(Dropout(0.3))
-	model.add(Dense(32, activation='relu'))
-    	model.add(Dropout(0.3))
-	model.add(Dense(10, activation='softmax'))
+		model = keras.Sequential()
+    		model.add(LSTM(128, input_shape=input_shape, return_sequences=True))
+		model.add(LSTM(128))
+    		model.add(Dropout(0.2))
+		model.add(Dense(64, activation='relu'))
+    		model.add(Dropout(0.3))
+		model.add(Dense(32, activation='relu'))
+    		model.add(Dropout(0.3))
+		model.add(Dense(10, activation='softmax'))
       
       
 Results:
