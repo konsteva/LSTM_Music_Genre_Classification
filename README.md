@@ -45,8 +45,8 @@ The final accuracy of the model is ~77%. Below, the accuracy and loss graphs can
 - Multilayer Perceptron (MLP):
 
 Model:
-
-      model = keras.Sequential([
+	
+        model = keras.Sequential([
         keras.layers.Flatten(input_shape=input_shape),
         keras.layers.Dense(512, activation='relu'),
         keras.layers.Dense(256, activation='relu'),
