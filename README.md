@@ -134,7 +134,7 @@ Results:
 - Performing more data augmentation
 - Using computer vision to train the model based on the spectogram and/or MFCCs (?)
 
-# How to try it in Google Colab:
+# Try it yourself in Google Colab:
 1. Login to Kaggle and download the json file that contains your API Token (User profile -> Account -> API -> Create new API Token)
 2. Upload the .json to your Google drive
 3. Open the Genre_Classification_LSTM.ipynb in Google Colab with using the same account you've upload the json to
