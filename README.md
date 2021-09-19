@@ -5,7 +5,7 @@ Link to the dataset:
 https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification
 
 # Feature Extraction
-The GTZAN dataset is used to extract features for each of the song in it. The script iterates through the folders of the songs and extracts the Mel Frequency Cepstral Coefficients (MFCCs) for each one. MFCCs was chosen as the prefered extracted features as it immitates the way the human ear works and is one of the most commonly used features in audio signal processing. The features, as well as the labels of the song and their mapping to genre is temporarily stored into a dictionary and afterwards they are saved into a json file for ease in processing and training later on.
+The GTZAN dataset is used to extract features for each of the song in it. The script iterates through the folders of the songs and extracts 13 Mel Frequency Cepstral Coefficients (MFCCs) for each one. MFCCs was chosen as the prefered extracted features as it immitates the way the human ear works and is one of the most commonly used features in audio signal processing. The features, as well as the labels of the song and their mapping to genre is temporarily stored into a dictionary and afterwards they are saved into a json file for ease in processing and training later on.
 
 Due to the small amount of data contained in the dataset, data augmentation is performed by splitting each song into 10 parts and using them as new songs. This increased the accuracy of the model by more than 30%
 
