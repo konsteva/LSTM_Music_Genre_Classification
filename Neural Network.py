@@ -46,7 +46,7 @@ def build_model(input_shape):
     model.add(Dense(48, activation='relu'))
     model.add(Dropout(0.4))
     # Output Layer
-    model.add(Dense(24, activation='softmax'))
+    model.add(Dense(10, activation='softmax'))
 
     model.summary()
 
